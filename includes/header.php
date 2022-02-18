@@ -10,6 +10,9 @@
 
     <title>WDev Vagas</title>
   </head>
-  <body>
-
-    
+  <body class="bg-dark text-light" >
+    <div class="container">
+      <div class="jumbotron bg-danger p-4">
+        <h1>WDev Vagas</h1>
+        <p>Exemplo de CRUD com php Orientado a Objetos.</p>
+      </div>
