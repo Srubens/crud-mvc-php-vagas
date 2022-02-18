@@ -10,7 +10,7 @@
     <form method="post">
       <div class="form-group">
         <label>Título</label>
-        <input type="text" class="form-control" name="titulo" value="<?=$obVaga->titulo?>">
+        <input type="text" class="form-control" name="titulo" value="<?=$obVaga->titulo?>" />
         <br/>
       </div>
 
@@ -30,7 +30,7 @@
             </label>
             <label style="margin-left:15px;" class="bg-white rounded text-dark col-12 col-md-1 ml-6 p-2">
               Inativo
-              <input type="radio" name="ativo" value="n" <?=$obVaga->ativo == 'n' ? 'checked' : ''?>>
+              <input type="radio" name="ativo" value="n" <?=$obVaga->ativo == 'n' ? 'checked' : ''?> />
             </label>
           </div>
         </div>

@@ -37,6 +37,21 @@ class Vaga
 	 */
 	public $data;
 
+	public function atualizar(){
+
+		return (new DataBase('vaga'))->update('id = '.$this->id,
+		[
+			'titulo' => $this->titulo,
+			'descricao' => $this->descricao,
+			'ativo' => $this->ativo,
+			'data' => $this->data
+		]);
+	}
+
+	public function excluir(){
+		return (new DataBase('vaga'))->delete('id = '. $this->id);
+	}
+
 	public function cadastrar(){
 		//DEFINIR A DATA
 		$this->data = date('Y-m-d H:i:s');
