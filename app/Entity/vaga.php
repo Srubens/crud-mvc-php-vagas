@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Entity;
+
 use \App\DB\DataBase;
+use \PDO;
 
 class Vaga
 {
@@ -40,9 +42,21 @@ class Vaga
 		$this->data = date('Y-m-d H:i:s');
 		//INSERIR NO BANCO
 		$obDataBase = new DataBase('vaga');
-		echo "<pre>"; print_r($obDataBase); echo "</pre>"; exit;
+		$this->id = $obDataBase->insert([
+			'titulo' => $this->titulo,
+			'descricao' => $this->descricao,
+			'ativo' => $this->ativo,
+			'data' => $this->data
+		]);
+		//echo "<pre>"; print_r($this); echo "</pre>"; exit;
 		//ATRIBUIR ID
 		//RETORNAR SUCESS
+		return true;
+	}
+
+	public static function getVagas($where = null, $order = null, $limit = null){
+		return (new DataBase('vaga'))->select($where, $order, $limit)
+		                             ->fetchAll(PDO::FETCH_CLASS,self::class);
 	}
 
 }

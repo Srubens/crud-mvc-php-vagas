@@ -16,6 +16,8 @@ if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'] )){
 	//echo "<pre>"; print_r($obVaga); echo "</pre>"; exit;
 
 	//die("Cadastrar");
+	header('location: index.php?status=success');
+	exit;
 }
 
 include __DIR__ . '/includes/header.php';
