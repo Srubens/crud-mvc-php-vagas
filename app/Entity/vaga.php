@@ -59,4 +59,9 @@ class Vaga
 		                             ->fetchAll(PDO::FETCH_CLASS,self::class);
 	}
 
+	public static function getVaga($id){
+		return (new DataBase('vaga'))->select(' id = '.$id)
+		                             ->fetchObject(self::class);
+	}
+
 }
