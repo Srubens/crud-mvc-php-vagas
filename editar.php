@@ -2,6 +2,11 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+use \App\Session\Login;
+
+//OBRIGA O USER ESTA LOGADO
+Login::requireLogin();
+
 define('TITLE', 'Editar Vaga');
 
 // echo "<pre>"; print_r($_POST); echo "</pre>"; exit;

@@ -1,3 +1,11 @@
+<?php
+use \App\Session\Login;
+$usuarioLogado = Login::getUsiarioLogado();
+$usuario = $usuarioLogado ?
+    $usuarioLogado['nome'] . ' <a style="margin-left:20px;" class="col-12 col-md-1 btn btn-danger text-bold" href="logout.php">sair</a>' :
+    'Visitante <a class="btn btn-success text-bold ml-2" href="login.php">Entrar</a>';
+//echo "<pre>"; print_r($usuarioLogado); echo "</pre>"; exit;
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +26,14 @@
   </head>
   <body class="bg-dark text-light" >
     <div class="container">
-      <div class="jumbotron bg-danger p-4">
+      <div class="jumbotron bg-danger p-4 bg-opacity-70">
         <h1>WDev Vagas</h1>
         <p>Exemplo de CRUD com php Orientado a Objetos.</p>
+
+            <hr/>
       </div>
+        <div class="d-flex justify-content-start flex-column">
+            <div class="bg-danger bg-opacity-25" >
+                <?= $usuario; ?>
+            </div>
+        </div>
